@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMart – Checkout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #b7d1da;
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #5c6f77;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 24px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #cddce3;
+        }
+        
+        /* Main Content */
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 30px auto;
+            flex: 1;
+        }
+        
+        h2 {
+            margin-top: 30px;
+            letter-spacing: 1px;
+            color: #2c3e50;
+        }
+        
+        .section-box {
+            background: #cddce3;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        label { 
+            font-size: 15px; 
+            display:block; 
+            margin-top:10px; 
+            font-weight: bold;
+        }
+        
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+        
+        .btn {
+            padding: 10px 25px;
+            background: #5c6f77;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #4a5a61;
+        }
+        
+        .order-table {
+            width:100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .order-table th, .order-table td {
+            border-bottom: 1px solid #666;
+            padding: 8px;
+            text-align:center;
+        }
+        
+        .order-table th {
+            background-color: #5c6f77;
+            color: white;
+        }
+        
+        .place-order-btn {
+            margin-top: 15px;
+            float:right;
+            background:#7b8f95;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #5c6f77;
+            color: white;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        .footer-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: #cddce3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <!-- Placeholder for logo - replace with actual logo image -->
+                <div style="width: 50px; height: 50px; background-color: white; display: flex; align-items: center; justify-content: center; border-radius: 5px; margin-right: 10px;">
+                    <span style="color: #5c6f77; font-weight: bold;">MM</span>
+                </div>
+                <h1>MediMart</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Prescriptions</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>BILLING AND SHIPPING INFORMATION</h2>
+        <div class="section-box">
+            <label>Name*</label>
+            <input type="text">
+
+            <label>Email*</label>
+            <input type="email">
+
+            <label>Phone*</label>
+            <input type="number">
+
+            <label>Shipping Address*</label>
+            <input type="text">
+
+            <br><br>
+            <input type="checkbox"> Billing address same as shipping<br>
+            <input type="checkbox"> Keep me updated on offers and news
+            <br><br>
+            <button class="btn">Submit</button>
+        </div>
+
+        <h2>PAYMENT METHOD SELECTION*</h2>
+        <div class="section-box">
+            <input type="radio" name="payment" id="cod"> <label for="cod" style="display: inline;">Cash on delivery</label><br><br>
+            <input type="radio" name="payment" id="card"> <label for="card" style="display: inline;">Credit/Debit Card</label>
+
+            <div style="margin-left:30px; margin-top:15px;">
+                <label>Card Number</label>
+                <input type="text">
+
+                <label>Expiry Date</label>
+                <input type="text">
+
+                <label>CVV</label>
+                <input type="text">
+            </div>
+
+            <br>
+            <input type="radio" name="payment" id="gpay"> <label for="gpay" style="display: inline;">Google Pay</label>
+        </div>
+
+        <h2>ORDER SUMMARY</h2>
+        <div class="section-box">
+            <table class="order-table">
+                <tr>
+                    <th>Quantity</th><th>Item</th><th>Price</th><th>Total</th>
+                </tr>
+                <tr>
+                    <td>2x</td><td>Biffnix Cough Syrup</td><td>250</td><td>500</td>
+                </tr>
+                <tr>
+                    <td>1x</td><td>Dulera Inhaler</td><td>2200</td><td>2200</td>
+                </tr>
+            </table>
+
+            <p><strong>Tax (GST):</strong> 150</p>
+            <p><strong>Delivery:</strong> Free</p>
+            <p><strong>Subtotal:</strong> 2850</p>
+
+            <button class="btn place-order-btn">Place Order</button>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Prescriptions</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: support@medimart.com</li>
+                    <li>Phone: 1-800-MEDIMART</li>
+                    <li>Address: 123 Health St, Medical City</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 MediMart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
