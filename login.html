@@ -19,34 +19,89 @@
     }
 
     header {
-        background-color: #5c6f77;
-        padding: 15px 0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        height: 70px; /* fixed header height */
-    }
+    background-color: #5c6f77;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-    header .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    /* Add top margin equal to header height + small space */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.logo-icon span {
+    color: #5c6f77;
+    font-weight: bold;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #cddce3;
+}
+
+/* Main Content */
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 30px auto;
+    flex: 1;
+}
+
+h2 { 
+    margin-top: 25px; 
+    letter-spacing:1px; 
+    color: #2c3e50;
+}
+
+    
     .login-container {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 90px 20px 40px; /* top padding adjusted for header */
+        padding: 90px 20px 40px; 
         box-sizing: border-box;
         width: 100%;
     }
@@ -147,7 +202,7 @@
         background-color: #2a3a44;
         color: #cddce3;
         width: 100%;
-        padding: 25px 0; /* compressed from top */
+        padding: 25px 0; 
         margin-top: auto;
     }
 
@@ -205,36 +260,33 @@
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <div style="display:flex; align-items:center;">
-      <div style="
-          width: 50px;
-          height: 50px;
-          background-color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 5px;
-          margin-right: 12px;
-      ">
-        <span style="color: #5c6f77; font-weight: bold; font-size: 18px;">MM</span>
-      </div>
-      <h1 style="color: white; font-size: 24px; margin: 0; letter-spacing: 0.5px;">MediMart</h1>
+<body>
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>MM</span>
+            </div>
+            <h1>MediMart</h1>
+        </div>
+
+        <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+                <li><a href="ShopByCategory.html">Shop</a></li>
+                <li><a href="productDetail.html">Product Detail</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Account</a></li>
+                <li><a href="review.html">Reviews</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-extra">
+            <input type="text" id="search-bar" placeholder="Search medicines...">
+           <a href="shipping.html" class="add-to-cart">🛒 Cart</a>
+        </div>
     </div>
-
-    <nav>
-      <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
-        <li style="margin-left: 25px;"><a href="#" style="color: white; text-decoration:none;">Home</a></li>
-        <li style="margin-left: 25px;"><a href="#" style="color: white; text-decoration:none;">Shop</a></li>
-        <li style="margin-left: 25px;"><a href="#" style="color: white; text-decoration:none;">Prescriptions</a></li>
-        <li style="margin-left: 25px;"><a href="#" style="color: white; text-decoration:none;">Contact</a></li>
-        <li style="margin-left: 25px;"><a href="#" style="color: white; text-decoration:none;">Account</a></li>
-      </ul>
-    </nav>
-  </div>
 </header>
-
 <div class="login-container">
     <h2 class="login-title">Login to MediMartt</h2>
     <form class="login-form">
@@ -340,8 +392,39 @@
     }
   }
 
-  // Connect login function to button
+  
   document.querySelector(".login-btn").onclick = login;
 </script>
+<div id="chat-popup">
+        <div id="chat-header" onclick="toggleChat()">
+            <span>💬 Customer Support</span>
+            <span id="close-btn">×</span>
+        </div>
+        <div id="chat-body">
+            <p>Hello! How can we help you today?</p>
+            <input type="text" placeholder="Type your message..." id="chat-input">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatBody = document.getElementById("chat-body");
+            chatBody.style.display = chatBody.style.display === "block" ? "none" : "block";
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("chat-input");
+            if(input.value.trim() !== "") {
+                alert("Message sent: " + input.value);
+                input.value = "";
+            }
+        }
+
+        document.getElementById("close-btn").addEventListener("click", function(e){
+            e.stopPropagation();
+            document.getElementById("chat-body").style.display = "none";
+        });
+    </script>
 </body>
 </html>
