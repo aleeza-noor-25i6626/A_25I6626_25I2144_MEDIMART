@@ -6,120 +6,34 @@
     <title>Product Page</title>
     <link rel="stylesheet" href="prodDetail.css">
 </head>
-
-<header style="
-    background-color: #5c6f77;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-">
-  <div style="
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  ">
+<body>
     
 
-    <div style="display: flex; align-items: center;">
-      
-    
-      <div style="
-          width: 50px;
-          height: 50px;
-          background-color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 5px;
-          margin-right: 12px;
-      ">
-        <span style="color: #5c6f77; font-weight: bold; font-size: 18px;">MM</span>
-      </div>
+    <header>
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>MM</span>
+            </div>
+            <h1>MediMart</h1>
+        </div>
 
-    
-      <h1 style="
-          color: white;
-          font-size: 24px;
-          margin: 0;
-          letter-spacing: 0.5px;
-      ">
-        MediMart
-      </h1>
+        <nav>
+            <ul>
+               <li><a href="#">Home</a></li>
+                <li><a href="ShopByCategory.html">Shop</a></li>
+                <li><a href="productDetail.html">Product Detail</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Account</a></li>
+                <li><a href="review.html">Reviews</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-extra">
+            <input type="text" id="search-bar" placeholder="Search medicines...">
+           <a href="shipping.html" class="add-to-cart">🛒 Cart</a>
+        </div>
     </div>
-
-   
-    <nav>
-      <ul style="
-          display: flex;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-      ">
-        <li style="margin-left: 25px;">
-            <a href="#" style="
-                color: white;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 15px;
-                padding: 4px 6px;
-                transition: 0.3s;
-            ">Home</a>
-        </li>
-
-        <li style="margin-left: 25px;">
-            <a href="#" style="
-                color: white;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 15px;
-                padding: 4px 6px;
-                transition: 0.3s;
-            ">Shop</a>
-        </li>
-
-        <li style="margin-left: 25px;">
-            <a href="#" style="
-                color: white;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 15px;
-                padding: 4px 6px;
-                transition: 0.3s;
-            ">Prescriptions</a>
-        </li>
-
-        <li style="margin-left: 25px;">
-            <a href="#" style="
-                color: white;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 15px;
-                padding: 4px 6px;
-                transition: 0.3s;
-            ">Contact</a>
-        </li>
-
-        <li style="margin-left: 25px;">
-            <a href="#" style="
-                color: white;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 15px;
-                padding: 4px 6px;
-                transition: 0.3s;
-            ">Account</a>
-        </li>
-      </ul>
-    </nav>
-
-  </div>
 </header>
 <main class="main-content">
     <div class="container">
@@ -210,6 +124,36 @@
         <p>© 2023 MediMart. All rights reserved.</p>
     </div>
 </footer>
+<div id="chat-popup">
+        <div id="chat-header" onclick="toggleChat()">
+            <span>💬 Customer Support</span>
+            <span id="close-btn">×</span>
+        </div>
+        <div id="chat-body">
+            <p>Hello! How can we help you today?</p>
+            <input type="text" placeholder="Type your message..." id="chat-input">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
 
+    <script>
+        function toggleChat() {
+            const chatBody = document.getElementById("chat-body");
+            chatBody.style.display = chatBody.style.display === "block" ? "none" : "block";
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("chat-input");
+            if(input.value.trim() !== "") {
+                alert("Message sent: " + input.value);
+                input.value = "";
+            }
+        }
+
+        document.getElementById("close-btn").addEventListener("click", function(e){
+            e.stopPropagation();
+            document.getElementById("chat-body").style.display = "none";
+        });
+    </script>
 </body>
 </html>
