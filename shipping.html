@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMart – Checkout</title>
+
+    <!-- LINK TO CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <div style="width: 50px; height: 50px; background-color: white; display: flex; align-items: center; justify-content: center; border-radius: 5px; margin-right: 10px;">
+                <span style="color: #5c6f77; font-weight: bold;">MM</span>
+            </div>
+            <h1>MediMart</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Prescriptions</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-extra">
+            <input type="text" placeholder="Search medicines..." id="search-bar">
+            <a href="#" class="add-to-cart">🛒 Cart</a>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <h2>BILLING AND SHIPPING INFORMATION</h2>
+    <div class="section-box">
+        <label>Name*</label>
+        <input type="text" placeholder="e.g., John Doe">
+
+        <label>Email*</label>
+        <input type="email" placeholder="e.g., john@example.com">
+
+        <label>Phone*</label>
+        <input type="number" placeholder="e.g., 03001234567">
+
+        <label>Shipping Address*</label>
+        <input type="text" placeholder="e.g., 123 Main St, City, Country">
+
+        <br><br>
+        <input type="checkbox"> Billing address same as shipping<br>
+        <input type="checkbox"> Keep me updated on offers and news
+        <br><br>
+        <button class="btn">Submit</button>
+    </div>
+
+    <h2>PAYMENT METHOD SELECTION*</h2>
+    <div class="section-box">
+        <input type="radio" name="payment" id="cod"> 
+        <label for="cod" style="display: inline;">Cash on delivery</label><br><br>
+
+        <input type="radio" name="payment" id="card"> 
+        <label for="card" style="display: inline;">Credit/Debit Card</label>
+
+        <div style="margin-left:30px; margin-top:15px;">
+            <label>Card Number</label>
+            <input type="text" placeholder="e.g., 1234 5678 9012 3456">
+
+            <label>Expiry Date</label>
+            <input type="text" placeholder="MM/YY">
+
+            <label>CVV</label>
+            <input type="text" placeholder="e.g., 123">
+        </div>
+
+        <br>
+        <input type="radio" name="payment" id="gpay"> 
+        <label for="gpay" style="display: inline;">Google Pay</label>
+    </div>
+
+    <h2>ORDER SUMMARY</h2>
+    <div class="section-box">
+        <table class="order-table">
+            <tr>
+                <th>Quantity</th><th>Item</th><th>Price</th><th>Total</th>
+            </tr>
+            <tr>
+                <td>2x</td><td>Biffnix Cough Syrup</td><td>250</td><td>500</td>
+            </tr>
+            <tr>
+                <td>1x</td><td>Dulera Inhaler</td><td>2200</td><td>2200</td>
+            </tr>
+        </table>
+
+        <p><strong>Tax (GST):</strong> 150</p>
+        <p><strong>Delivery:</strong> Free</p>
+        <p><strong>Subtotal:</strong> 2850</p>
+
+        <button class="btn place-order-btn">Place Order</button>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Prescriptions</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Returns & Refunds</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <ul>
+                <li>Email: support@medimart.com</li>
+                <li>Phone: 1-800-MEDIMART</li>
+                <li>Address: 123 Health St, Medical City</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; 2023 MediMart. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- CHAT POPUP -->
+<div id="chat-popup">
+    <div id="chat-header" onclick="toggleChat()">
+        <span>💬 Customer Support</span>
+        <span id="close-btn">×</span>
+    </div>
+    <div id="chat-body">
+        <p>Hello! How can we help you today?</p>
+        <input type="text" placeholder="Type your message..." id="chat-input">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    function toggleChat() {
+        const chatBody = document.getElementById("chat-body");
+        chatBody.style.display = (chatBody.style.display === "block") ? "none" : "block";
+    }
+
+    function sendMessage() {
+        const input = document.getElementById("chat-input");
+        if(input.value.trim() !== "") {
+            alert("Message sent: " + input.value);
+            input.value = "";
+        }
+    }
+
+    document.getElementById("close-btn").addEventListener("click", function(e){
+        e.stopPropagation();
+        document.getElementById("chat-body").style.display = "none";
+    });
+</script>
+
+</body>
+</html>
