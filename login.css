@@ -1,0 +1,154 @@
+
+body{
+     margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #b7d1da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('Clean_Medical_Gradient_UI.png');
+    background-size: cover;        /* covers full viewport */
+    background-position: center;   /* centers the image */
+    background-repeat: no-repeat;  /* no tiling */
+}
+.login-box{
+    background: rgba(160, 146, 146, 0.95);
+    padding: 40px;
+    text-align: center;
+    
+    border-color: #9a96ef;
+    width: 350px;
+}
+.login-title{
+    text-align: center;
+    color: #090556;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* keeps fields centered */
+    gap: 15px;                /* spacing between email & password */
+}
+
+.login-form input[type= "email"],
+.login-form input[type= "password"]{
+    font-size:small;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    padding: 12px;
+    height: 20px;
+}
+.login-form input:focus{
+    border-color: #007bff;
+}
+.checkbox{
+    text-align: left;
+    margin: 10px;
+    font-size: 14px;
+}
+.checkbox input{
+    margin-right:8px ;
+}
+.options-row {
+    display: flex;
+    justify-content: space-between; /* checkbox left, forgot link right */
+    align-items: center;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #0056b3;
+}
+.login-button{
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+.login-button:hover{
+    background-color: #0056b3;
+}
+.divider {
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #ccc;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider span {
+    padding: 0 10px;
+    background: #fff;
+}
+
+/* Social Buttons */
+.social-login button {
+    width: 100%;
+    padding: 50x;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #6c4343;
+}
+.icon{
+    width: 18px;
+    height:18px;
+}
+.google-btn {
+    background-color: #c6a8a6;
+}
+
+.google-btn:hover {
+    background-color: #c6a8a6;
+}
+
+.facebook-btn {
+ background-color: #c6a8a6;
+
+}
+
+.facebook-btn:hover {
+       background-color:#c6a8a6;
+
+}
