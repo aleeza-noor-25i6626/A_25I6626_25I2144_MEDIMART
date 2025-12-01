@@ -25,6 +25,32 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+.header-extra {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#search-bar {
+    padding: 6px 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.add-to-cart {
+    background: #5c6f77;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #4a5a61;
+}
+
 
 .logo {
     display: flex;
@@ -253,4 +279,5 @@ footer {
 #chat-body button:hover {
     background: #4a5a61;
 }
+
 
