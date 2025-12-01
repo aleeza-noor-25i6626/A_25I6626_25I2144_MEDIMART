@@ -12,8 +12,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
-/* Header */
 header {
     background-color: #5c6f77;
     padding: 15px 0;
@@ -74,8 +72,6 @@ nav ul li a {
 nav ul li a:hover {
     color: #cddce3;
 }
-
-/* Search + Cart */
 .header-extra {
     display: flex;
     align-items: center;
@@ -104,8 +100,6 @@ nav ul li a:hover {
 .add-to-cart:hover {
     background: #5c6f77;
 }
-
-/* Reviews Section */
 .reviews-container {
     width: 90%;
     max-width: 1200px;
@@ -157,8 +151,6 @@ nav ul li a:hover {
     color: #0084ff;
     font-size: 18px;
 }
-
-/* Footer */
 footer {
     background-color: #5c6f77;
     color: white;
@@ -212,8 +204,6 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* Chat Popup */
 #chat-popup {
     position: fixed;
     bottom: 20px;
@@ -259,3 +249,4 @@ footer {
     border-radius: 4px;
     cursor: pointer;
 }
+
