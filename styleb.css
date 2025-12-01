@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     background: #b7d1da;
     font-family: Arial, sans-serif;
@@ -12,8 +11,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
-/* Header Styles */
 header {
     background-color: #5c6f77;
     padding: 15px 0;
@@ -74,8 +71,6 @@ nav ul li a {
 nav ul li a:hover {
     color: #cddce3;
 }
-
-/* Main Content */
 .container {
     width: 80%;
     max-width: 1000px;
@@ -131,8 +126,6 @@ textarea {
 .btn:hover {
     background: #4a5a61;
 }
-
-/* Accordion FAQ */
 .faq-item {
     margin-bottom: 12px;
 }
@@ -153,8 +146,6 @@ textarea {
     margin-top: 5px;
     line-height: 1.5;
 }
-
-/* Footer Styles */
 footer {
     background-color: #5c6f77;
     color: white;
@@ -208,8 +199,6 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-/* Customer Support Chat Popup */
 #chat-popup {
     position: fixed;
     bottom: 20px;
@@ -264,3 +253,4 @@ footer {
 #chat-body button:hover {
     background: #4a5a61;
 }
+
