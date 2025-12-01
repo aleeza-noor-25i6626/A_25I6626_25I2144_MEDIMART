@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us – MediMart</title>
+    <link rel="stylesheet" href="styled.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>MM</span>
+            </div>
+            <h1>MediMart</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Prescriptions</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-extra">
+            <input type="text" id="search-bar" placeholder="Search medicines...">
+            <a href="#" class="add-to-cart">🛒 Cart</a>
+        </div>
+    </div>
+</header>
+
+<!-- ABOUT US CONTENT -->
+<section class="about-container">
+
+    <h1 class="about-title">About Us</h1>
+
+    <div class="section">
+        <h2>Our Story</h2>
+        <p>
+            MediMart began with a mission to make healthcare simpler, faster, and more accessible for everyone.
+            What started as a local service has now grown into a trusted online platform offering medicines,
+            wellness essentials, and medical supplies across Pakistan.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Our Mission</h2>
+        <p>
+            We aim to provide a safe, reliable, and affordable healthcare experience by ensuring timely delivery,
+            genuine products, and customer support that truly cares.
+        </p>
+    </div>
+
+    <div class="section achievements">
+        <h2>Achievements</h2>
+        <ul>
+            <li>✔ Over 10,000 happy customers</li>
+            <li>✔ 5+ years of trusted service</li>
+            <li>✔ Delivering 100+ orders daily</li>
+        </ul>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Prescriptions</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <ul>
+                <li>Email: support@medimart.com</li>
+                <li>Phone: 1-800-MEDIMART</li>
+                <li>Address: Medical City</li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+
+<!-- CHAT POPUP -->
+<div id="chat-popup">
+    <div id="chat-header" onclick="toggleChat()">
+        <span>💬 Customer Support</span>
+        <span id="close-btn">×</span>
+    </div>
+    
+    <div id="chat-body">
+        <p>Hello! How can we assist you?</p>
+        <input type="text" id="chat-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+function toggleChat() {
+    const chatBody = document.getElementById("chat-body");
+    chatBody.style.display = (chatBody.style.display === "block") ? "none" : "block";
+}
+
+function sendMessage() {
+    const input = document.getElementById("chat-input");
+    if (input.value.trim() !== "") {
+        alert("Message sent: " + input.value);
+        input.value = "";
+    }
+}
+
+document.getElementById("close-btn").addEventListener("click", function(e) {
+    e.stopPropagation();
+    document.getElementById("chat-body").style.display = "none";
+});
+</script>
+
+</body>
+</html>
