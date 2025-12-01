@@ -1,0 +1,146 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #b7d1da;
+    margin: 0;
+    padding: 100px;
+}
+
+
+
+/* Page Title */
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a5f7a;
+    margin-bottom: 10px;
+}
+.page-title span {
+    font-size: 20px;
+    color: #1a5f7a;
+}
+
+/* Layout container */
+.product-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.left-side {
+    width: 35%;
+}
+
+.medicine-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Price box */
+.price-box {
+    background-color: rgba(255,255,255,0.7);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #1a5f7a;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.qty-controls button {
+    padding: 5px 12px;
+    border: 1px solid #0096c7;
+    background: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.total, .stock-info {
+    font-size: 14px;
+    text-align: center;
+    margin: 8px 0;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    background: #00b4d8;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* RIGHT SIDE */
+.right-side {
+    width: 60%;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: #d946a6;
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 15px;
+}
+
+.right-side h3 {
+    color: #1a5f7a;
+    margin: 10px 0 5px;
+}
+
+.right-side p {
+    color: #2c6e8f;
+    line-height: 1.6;
+}
+.footer {
+    background-color: #2a3a44;
+    color: #cddce3;
+    padding: 40px 0;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-box a {
+    color: #cddce3;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
