@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMart – Contact Us</title>
+    <link rel="stylesheet" href="styleb.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <span>MM</span>
+                </div>
+                <h1>MediMart</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Prescriptions</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>CONTACT US</h2>
+        <div class="section-box">
+            <label>Name*</label>
+            <input type="text">
+            <label>Email*</label>
+            <input type="email">
+            <label>Phone (optional)</label>
+            <input type="text">
+            <label>Subject*</label>
+            <input type="text">
+            <label>Message*</label>
+            <textarea></textarea>
+            <button class="btn">Submit</button>
+        </div>
+
+        <h2>FAQs</h2>
+        <div class="section-box faq">
+            <div class="faq-item">
+                <p class="faq-question">Q: How do I order medicines?</p>
+                <p class="faq-answer">Browse items, add to cart, checkout. Home delivery available.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: Can you suggest medicines based on symptoms?</p>
+                <p class="faq-answer">Yes, enter your symptoms and we recommend suitable medicines.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: What are the payment options?</p>
+                <p class="faq-answer">Credit/debit cards, UPI, and COD.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-question">Q: How long does delivery take?</p>
+                <p class="faq-answer">Usually 24–48 hours depending on your location.</p>
+            </div>
+        </div>
+
+        <h2>Customer Support</h2>
+        <div class="section-box">
+            <p>Need immediate help? Our customer support team is here 24/7 to assist you.</p>
+            <p><strong>Chat with us:</strong> <a href="#">Start Live Chat</a></p>
+            <p><strong>Email:</strong> support@medimart.com</p>
+            <p><strong>Phone:</strong> 1-800-MEDIMART</p>
+            <p><strong>Address:</strong> 123 Health St, Medical City</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Prescriptions</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>Email: support@medimart.com</li>
+                    <li>Phone: 1-800-MEDIMART</li>
+                    <li>Address: 123 Health St, Medical City</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 MediMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Accordion FAQ Script -->
+    <script>
+        const questions = document.querySelectorAll(".faq-question");
+        questions.forEach(q => {
+            q.addEventListener("click", () => {
+                const ans = q.nextElementSibling;
+                ans.style.display = ans.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+
+    <!-- Customer Support Chat Popup -->
+    <div id="chat-popup">
+        <div id="chat-header" onclick="toggleChat()">
+            <span>💬 Customer Support</span>
+            <span id="close-btn">×</span>
+        </div>
+        <div id="chat-body">
+            <p>Hello! How can we help you today?</p>
+            <input type="text" placeholder="Type your message..." id="chat-input">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            const chatBody = document.getElementById("chat-body");
+            chatBody.style.display = chatBody.style.display === "block" ? "none" : "block";
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("chat-input");
+            if(input.value.trim() !== "") {
+                alert("Message sent: " + input.value);
+                input.value = "";
+            }
+        }
+
+        document.getElementById("close-btn").addEventListener("click", function(e){
+            e.stopPropagation();
+            document.getElementById("chat-body").style.display = "none";
+        });
+    </script>
+</body>
+</html>
